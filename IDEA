@@ -1,0 +1,34 @@
+Code Review Agent for PRs with Latency & Risk Detection
+
+Pain Point: Teams struggle to review PRs for performance bottlenecks or security issues
+
+🏗️To build: An AI agent that reviews PRs and flags latency, security, or logic issues — like a smart co-reviewer.
+
+🔍 Existing Code Review LLM Projects:
+1. Code-Reviewer-GPT (https://github.com/Diqsy/Code-Reviewer-GPT)
+	•	Uses GPT to review code and PRs
+	•	Focus: general suggestions, style, logic
+	•	No latency/simulation or API-specific warnings
+
+2. IBM Automated Code Review LLM (https://github.com/IBM/automated-code-review-llm)
+	•	Uses Watsonx to do automated reviews
+	•	Mostly basic logic + comment generation
+	•	Not latency-aware or performance focused
+
+3. Sourcegraph Cody (https://github.com/sourcegraph/cody)
+	•	Full AI dev tool, not open-source
+	•	Pair programming + suggestions
+	•	Enterprise-level — not DIY-friendly
+
+4. Amazon CodeWhisperer
+	•	Proprietary, security suggestions only
+	•	No public repo for forking or extending
+
+⸻
+
+✅ What’s Missing in Existing Projects — Your Differentiator
+	1.	Latency-aware PR review — no one simulates or analyzes performance
+	2.	Code risk estimation — LLM commenting on potential bottlenecks
+	3.	Lightweight + portable (FastAPI, Hugging Face) — DIY-friendly version
+	4.	Explains fix suggestions (XAI-ish) — most just dump bullet suggestions
+	5.	Log + track latency per PR — analytics component = gold for dev leads
