@@ -17,4 +17,8 @@ class Config:
     # Risk analysis settings
     RISK_ANALYSIS_ENABLED = os.getenv('RISK_ANALYSIS_ENABLED', 'true').lower() == 'true'
 
+    # Integration tokens
+    GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+    BITBUCKET_TOKEN = os.getenv('BITBUCKET_TOKEN')
+
     # Other settings can be added here as needed
