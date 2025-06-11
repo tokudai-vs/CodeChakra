@@ -3,6 +3,7 @@
 ## Overview
 The AI Code Review Agent is designed to assist development teams in reviewing pull requests (PRs) by identifying potential performance bottlenecks, security issues, and logical errors. This agent leverages advanced AI techniques to provide insights and recommendations, making the code review process more efficient and effective.
 
+This project now leverages **LangGraph** to coordinate multiple specialized agents.
 │   │   ├── language_detector.py  # Detects programming language
 │   │   ├── static_analyzer.py   # Static code analysis
 ## Features
@@ -13,6 +14,7 @@ The AI Code Review Agent is designed to assist development teams in reviewing pu
 - **Analytics Component**: Logs and tracks latency metrics per PR, providing valuable data for development leads.
 - **Language Detection**: Identifies the programming language of code snippets before analysis.
 - **Static Code Analysis**: Reports basic complexity metrics using lizard.
+- **Agentic Workflow**: Orchestrated using LangGraph for modular analysis.
 
 ## Project Structure
 ```

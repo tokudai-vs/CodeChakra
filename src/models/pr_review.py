@@ -9,5 +9,5 @@ class PRReview:
     def get_review_summary(self):
         return {
             "pr_id": self.pr_id,
-            "comments": self.review_comments
+            "comments": self.review_comments,
         }
