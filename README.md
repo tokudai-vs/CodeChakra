@@ -67,6 +67,14 @@ To start the AI Code Review Agent, run the following command:
 python src/main.py
 ```
 This will initialize the agent and start the API server, allowing you to submit PRs for review.
+## Webhook Integration
+Configure GitHub or Bitbucket to call the API whenever a pull request is created.
+
+- **GitHub**: send 'pull_request' events to '/webhook/github'.
+- **Bitbucket**: send 'pullrequest:created' events to '/webhook/bitbucket'.
+
+Set 'GITHUB_TOKEN' and 'BITBUCKET_TOKEN' environment variables so the server can fetch PR diffs.
+
 
 ## Contributing
 Contributions are welcome! Please follow these steps:
