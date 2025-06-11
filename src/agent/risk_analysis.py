@@ -1,23 +1,13 @@
 class RiskAnalyzer:
-    def __init__(self):
-        pass
+    """Analyze pull requests for potential risks."""
 
     def analyze_risk(self, pr):
-        """
-        Analyzes the given pull request for potential risks.
-        
-        Args:
-            pr: The pull request object to analyze.
-        
-        Returns:
-            A dictionary containing risk assessment results.
-        """
-        # Placeholder for risk analysis logic
+        code = getattr(pr, "code", "") if not isinstance(pr, dict) else pr.get("code", "")
         risk_assessment = {
-            "risk_level": "low",  # Example risk level
-            "issues": []          # List of identified issues
+            "risk_level": "low",
+            "issues": []
         }
-        
-        # Implement risk analysis logic here
-        
+        if "eval(" in code:
+            risk_assessment["risk_level"] = "medium"
+            risk_assessment["issues"].append("Use of eval may be risky")
         return risk_assessment
