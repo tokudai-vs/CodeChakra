@@ -1,17 +1,14 @@
 def measure_latency(func):
+    """Execute *func* and return the time it took in seconds."""
     import time
+    start_time = time.time()
+    func()
+    end_time = time.time()
+    latency = end_time - start_time
+    print(f"Latency for {func.__name__}: {latency:.4f} seconds")
+    return latency
 
-    def wrapper(*args, **kwargs):
-        start_time = time.time()
-        result = func(*args, **kwargs)
-        end_time = time.time()
-        latency = end_time - start_time
-        print(f"Latency for {func.__name__}: {latency:.4f} seconds")
-        return result
-
-    return wrapper
 
 def analyze_latency(data):
-    # Placeholder for analyzing latency data
-    # This function can be expanded to include more sophisticated analysis
+    """Return average latency from a sequence of values."""
     return {"average_latency": sum(data) / len(data) if data else 0}

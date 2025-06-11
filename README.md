@@ -3,12 +3,16 @@
 ## Overview
 The AI Code Review Agent is designed to assist development teams in reviewing pull requests (PRs) by identifying potential performance bottlenecks, security issues, and logical errors. This agent leverages advanced AI techniques to provide insights and recommendations, making the code review process more efficient and effective.
 
+│   │   ├── language_detector.py  # Detects programming language
+│   │   ├── static_analyzer.py   # Static code analysis
 ## Features
 - **Latency-Aware Reviews**: Simulates and analyzes performance to flag potential latency issues in PRs.
 - **Risk Analysis**: Evaluates code for potential risks and bottlenecks, providing actionable insights.
 - **Lightweight and Portable**: Built using FastAPI and Hugging Face, making it easy to deploy and extend.
 - **Explainable Suggestions**: Offers explanations for suggested fixes, enhancing understanding and learning.
 - **Analytics Component**: Logs and tracks latency metrics per PR, providing valuable data for development leads.
+- **Language Detection**: Identifies the programming language of code snippets before analysis.
+- **Static Code Analysis**: Reports basic complexity metrics using lizard.
 
 ## Project Structure
 ```
@@ -18,6 +22,8 @@ ai-code-review-agent
 │   ├── agent                   # Contains the review agent logic
 │   │   ├── __init__.py
 │   │   ├── review.py           # ReviewAgent class for PR analysis
+│   │   ├── language_detector.py  # Detects programming language
+│   │   ├── static_analyzer.py   # Static code analysis
 │   │   └── risk_analysis.py     # RiskAnalyzer class for risk evaluation
 │   ├── api                     # API routes for the application
 │   │   ├── __init__.py
@@ -35,6 +41,8 @@ ai-code-review-agent
     ├── __init__.py
     ├── test_review.py          # Tests for review functionality
     └── test_latency.py         # Tests for latency measurement
+    ├── test_language_detector.py # Tests for language detection
+    └── test_static_analyzer.py   # Tests for static analysis
 ```
 
 ## Installation
